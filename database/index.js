@@ -30,7 +30,7 @@ let retrieveFromDb = (callback) => {
   Repo.find((err, data) => {
     if (err) throw err;
     callback(data);
-  }).limit(25)
+  }).limit(25).sort({ _id: -1 })
 
 }
 

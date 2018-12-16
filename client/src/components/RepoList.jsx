@@ -3,10 +3,11 @@ import RepoListEntry from './RepoListEntry.jsx';
 
 
 const RepoList = (props) => {
+  console.log("props at repoist", props)
   var repoList = []
   var repoListLength = Math.min(props.repos.length, 25)
   console.log("length", repoListLength)
-  for (var i = 0; i < repoListLength; i++) {
+  for (var i = repoListLength - 1; i >= 0; i--) {
     repoList.push(<RepoListEntry repo={props.repos[i]} key={i} />)
   }
 
@@ -34,5 +35,6 @@ const RepoList = (props) => {
     </div>
   )
 }
+
 
 export default RepoList;
