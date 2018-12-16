@@ -27,10 +27,10 @@ let save = (repo) => {
 }
 
 let retrieveFromDb = (callback) => {
-  Repo.find({}, (err, data) => {
+  Repo.find((err, data) => {
     if (err) throw err;
     callback(data);
-  })
+  }).limit(25)
 
 }
 

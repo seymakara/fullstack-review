@@ -5,14 +5,15 @@ import RepoListEntry from './RepoListEntry.jsx';
 const RepoList = (props) => {
   var repoList = []
   var repoListLength = Math.min(props.repos.length, 25)
-  console.log(repoList)
+  console.log("length", repoListLength)
   for (var i = 0; i < repoListLength; i++) {
     repoList.push(<RepoListEntry repo={props.repos[i]} key={i} />)
   }
 
   return (
     <div>
-      <h4> Repo List Component </h4>
+      <h4> List of Repos </h4>
+      <p>There are {props.repos.length} repos</p>
       <table>
         <tr>
           <th>
