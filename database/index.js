@@ -26,4 +26,13 @@ let save = (repo) => {
   });
 }
 
+let retrieveFromDb = (callback) => {
+  Repo.find({}, (err, data) => {
+    if (err) throw err;
+    callback(data);
+  })
+
+}
+
 module.exports.save = save;
+module.exports.retrieveFromDb = retrieveFromDb;
